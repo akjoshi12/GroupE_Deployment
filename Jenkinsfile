@@ -3,6 +3,7 @@ pipeline {
     environment {
         VENV_PATH = "${WORKSPACE}/venv"
         DOCKER_HOST = "unix:///var/run/docker.sock"  // Ensure Docker can connect
+        PATH = "/usr/local/bin:$PATH"  // Add Docker's location to PATH
     }
     stages {
         stage('Checkout') {
@@ -22,8 +23,7 @@ pipeline {
                 script {
                     sh '''
                         IMAGE_TAG=${BUILD_ID}
-                        # Ensure Docker is running by checking the Docker version
-                        docker version
+                        docker version  # Verify Docker is available
                         docker build -t streamlit-devops-app:$IMAGE_TAG .
                     '''
                 }
