@@ -78,7 +78,13 @@ AMAZON_SHOE_REVIEWS = [
 # Load the sentiment pipeline
 @st.cache_resource
 def load_sentiment_pipeline():
-    return pipeline("sentiment-analysis", model="sentiment_model")
+    try:
+        # Attempt to load the specified model
+        return pipeline("sentiment-analysis", model="sentiment_model")
+    except Exception as e:
+        st.warning("Specified model not found. Downloading the default model...")
+        # Fallback to the default model
+        return pipeline("sentiment-analysis")
 
 # Main app
 def main():
