@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        PATH = "/usr/local/bin:/usr/bin:/bin"
+        PATH = "/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin"  // Adjust this path based on where ansible is installed
     }
 
     stages {
@@ -22,7 +22,6 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    // Use environment variable properly with shell script
                     sh '''
                         IMAGE_TAG=${BUILD_ID}
                         /usr/local/bin/docker build -t streamlit-devops-app:$IMAGE_TAG .
@@ -33,12 +32,11 @@ pipeline {
 
         stage('Deploy with Ansible') {
             steps {
-                ansiblePlaybook(
-                    playbook: 'deploy.yml',
-                    inventory: 'hosts',
-                    credentialsId: 'ansible-ssh-key',
-                    extras: '-e "image_tag=${env.BUILD_ID}"'
-                )
+                script {
+                    sh '''
+                        ansible-playbook deploy.yml -i hosts --private-key /Users/atrijoshi/.jenkins/workspace/Streamlit-Sentiment-Analysis/ssh18358635923941210495.key -u atrijoshi -e "image_tag=${BUILD_ID}"
+                    '''
+                }
             }
         }
     }
