@@ -66,6 +66,7 @@ This project is part of the Retail Industry Project module, where the objective 
 
 # Errors
 ![image](https://github.com/user-attachments/assets/5cebd1ef-8f1d-430c-9a37-ea5bc50b219f) 
+![image](https://github.com/user-attachments/assets/9bbaaf82-f6ca-4694-a53f-2aa33f946f3a)
 
 
 
@@ -90,6 +91,10 @@ This project is part of the Retail Industry Project module, where the objective 
 
 
 
-## Application Video  
+## Application V
 ![image](https://github.com/user-attachments/assets/568d6fa8-1cf9-4429-bda9-6ef467e31d45) 
+## Final Live Demo
+
+https://sentiment-nxrfibmeyktq4mjfsm4usw.streamlit.app/ 
+
 
