@@ -152,7 +152,7 @@ def analyze_sentiment(text, is_test_case=False):
     # Load sentiment pipeline
     sentiment_pipeline = load_sentiment_pipeline()
 
-    # Show loading spinner
+    # Showing loading spinner
     with st.spinner('Analyzing sentiment...'):
         # Small delay to simulate processing
         time.sleep(1)
@@ -160,7 +160,7 @@ def analyze_sentiment(text, is_test_case=False):
         # Perform sentiment analysis
         result = sentiment_pipeline(text)[0]
 
-    # Display results in a styled container
+    # Displaying results in a styled container
     st.markdown('<div class="result-box">', unsafe_allow_html=True)
     
     # Emoji based on sentiment
