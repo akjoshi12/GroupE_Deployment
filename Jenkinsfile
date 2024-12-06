@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     environment {
-        // Explicitly add /usr/local/bin to PATH for Docker
         PATH = "/usr/local/bin:/usr/bin:/bin"
     }
 
@@ -23,8 +22,11 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    // Use the full path for Docker explicitly
-                    sh '/usr/local/bin/docker build -t streamlit-devops-app:${env.BUILD_ID} .'
+                    // Use environment variable properly with shell script
+                    sh '''
+                        IMAGE_TAG=${BUILD_ID}
+                        /usr/local/bin/docker build -t streamlit-devops-app:$IMAGE_TAG .
+                    '''
                 }
             }
         }
