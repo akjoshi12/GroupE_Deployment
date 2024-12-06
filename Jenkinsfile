@@ -34,7 +34,7 @@ pipeline {
             steps {
                 script {
                     sh '''
-                        ansible-playbook deploy.yml -i hosts --private-key /Users/atrijoshi/.jenkins/workspace/Streamlit-Sentiment-Analysis/ssh18358635923941210495.key -u atrijoshi -e "image_tag=${BUILD_ID}"
+                        ansible-playbook deploy.yml -i hosts --private-key /path/to/correct/ssh/key -u azureuser -e "image_tag=${BUILD_ID}"
                     '''
                 }
             }
