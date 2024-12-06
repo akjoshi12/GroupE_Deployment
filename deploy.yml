@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Stop existing container
+      docker_container:
+        name: streamlit-app
+        state: absent
+
+    - name: Pull the latest Docker image
+      docker_image:
+        name: streamlit-devops-app:{{ image_tag }}
+        source: pull
+
+    - name: Run the Docker container
+      docker_container:
+        name: streamlit-app
+        image: streamlit-devops-app:{{ image_tag }}
+        ports:
+          - "8501:8501"
+        restart_policy: always
