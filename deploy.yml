@@ -14,7 +14,7 @@
 
     - name: Run the Docker container
       docker_container:
-        name: streamlit-app
+        name: streamlit-devops-app
         image: streamlit-devops-app:{{ image_tag }}
         ports:
           - "8501:8501"
