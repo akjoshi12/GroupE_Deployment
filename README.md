@@ -89,10 +89,9 @@ This project is part of the Retail Industry Project module, where the objective 
 ![image](https://github.com/user-attachments/assets/fc610499-aeb9-4f0a-813e-049b399899eb)
 
 
-
-
-## Application V
+## Application 
 ![image](https://github.com/user-attachments/assets/568d6fa8-1cf9-4429-bda9-6ef467e31d45) 
+
 ## Final Live Demo
 
 https://sentiment-nxrfibmeyktq4mjfsm4usw.streamlit.app/ 
