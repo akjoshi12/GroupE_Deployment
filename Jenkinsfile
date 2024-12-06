@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         PATH = "/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin"
+        VENV_PATH = "${WORKSPACE}/venv"  // Define path to virtual environment in workspace
     }
     stages {
         stage('Checkout') {
@@ -26,10 +27,27 @@ pipeline {
                 }
             }
         }
+        stage('Set up Python Virtual Environment') {
+            steps {
+                script {
+                    // Create virtual environment if it doesn't exist
+                    sh '''
+                        if [ ! -d "${VENV_PATH}" ]; then
+                            python3 -m venv ${VENV_PATH}
+                        fi
+                        source ${VENV_PATH}/bin/activate
+                        pip install --upgrade pip
+                        pip install docker requests
+                    '''
+                }
+            }
+        }
         stage('Deploy with Ansible') {
             steps {
                 script {
+                    // Use the virtual environment's Python interpreter for Ansible
                     sh '''
+                        source ${VENV_PATH}/bin/activate
                         ansible-playbook deploy.yml -i hosts -e "image_tag=${BUILD_ID}"
                     '''
                 }
