@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         VENV_PATH = "${WORKSPACE}/venv"  // Define path to virtual environment in workspace
+        DOCKER_HOST = "unix:///var/run/docker.sock"  // Ensure Docker daemon is accessible
     }
     stages {
         stage('Checkout') {
@@ -20,8 +21,9 @@ pipeline {
             steps {
                 script {
                     sh '''
-                        export DOCKER_HOST="unix:///var/run/docker.sock"
                         IMAGE_TAG=${BUILD_ID}
+                        # Set DOCKER_HOST to ensure Docker commands work
+                        export DOCKER_HOST="unix:///var/run/docker.sock"
                         /usr/local/bin/docker build -t streamlit-devops-app:$IMAGE_TAG .
                     '''
                 }
