@@ -47,7 +47,7 @@ pipeline {
                     // Use the virtual environment's Python interpreter for Ansible
                     sh '''
                         source ${VENV_PATH}/bin/activate
-                        ansible-playbook deploy.yml -i hosts -e "image_tag=${BUILD_ID}"
+                        ansible-playbook -vvv deploy.yml -i hosts -e "image_tag=${BUILD_ID}"
                     '''
                 }
             }
