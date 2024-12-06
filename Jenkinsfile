@@ -36,7 +36,7 @@ pipeline {
                         fi
                         source ${VENV_PATH}/bin/activate
                         pip install --upgrade pip
-                        pip install docker requests
+                        pip install docker requests ansible  # Install ansible here
                     '''
                 }
             }
