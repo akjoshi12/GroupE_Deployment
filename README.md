@@ -64,16 +64,30 @@ This project is part of the Retail Industry Project module, where the objective 
   - **README**:
     - Provides a comprehensive guide on the project, including setup instructions,
 
-### Current status
-### Creating an Ansible
-![image](https://github.com/user-attachments/assets/7a3e1adb-2431-4fda-9d3a-819a68b4b6ff)
+# Errors
+![image](https://github.com/user-attachments/assets/5cebd1ef-8f1d-430c-9a37-ea5bc50b219f) 
 
-### Creating a Playbook
-![image](https://github.com/user-attachments/assets/36498436-9817-4b0e-a683-4a42f1452c70)
+
+
+### Issue with credential
+![image](https://github.com/user-attachments/assets/e616da79-ce48-493f-bfa5-838668667846)
+
+![image](https://github.com/user-attachments/assets/734dfa95-89ad-4d85-beb6-ffa2219fe625)
+
+
 
 ### Running Playbook
 
-![image](https://github.com/user-attachments/assets/7c14154d-9715-4bf3-9d35-51e14ed80edd)
+![image](https://github.com/user-attachments/assets/5b2a6d52-4e43-4ca4-b0b2-a75819ca36b9)
+
+### Super User Permission
+![image](https://github.com/user-attachments/assets/58321fed-83ab-46f2-9ed9-b221fba91a60)
+
+
+### Module issue 
+![image](https://github.com/user-attachments/assets/fc610499-aeb9-4f0a-813e-049b399899eb)
+
+
 
 
 ## Application Video (Local) 
