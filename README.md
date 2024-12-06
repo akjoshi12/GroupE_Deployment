@@ -90,8 +90,8 @@ This project is part of the Retail Industry Project module, where the objective 
 
 
 
-## Application Video (Local) 
-https://www.youtube.com/watch?v=o0bNkMqTJZk&ab_channel=JoshiAtri 
+## Application Video  
+[https://www.youtube.com/watch?v=o0bNkMqTJZk&ab_channel=JoshiAtri ](https://sentiment-nxrfibmeyktq4mjfsm4usw.streamlit.app/) 
 
 ![image](https://github.com/user-attachments/assets/568d6fa8-1cf9-4429-bda9-6ef467e31d45) 
 
