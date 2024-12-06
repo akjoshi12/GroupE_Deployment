@@ -1,2 +1,4 @@
 [all]
-localhost
+[all]
+20.84.123.206 ansible_ssh_user=azureuser
+20.42.63.127 ansible_ssh_user=azureuser
