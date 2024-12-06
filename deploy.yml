@@ -2,6 +2,12 @@
 - hosts: all
   become: yes
   tasks:
+    - name: Ensure Docker Python libraries are installed
+      pip:
+        name: 
+          - docker
+          - requests
+
     - name: Stop existing container
       docker_container:
         name: streamlit-devops-app
@@ -10,7 +16,7 @@
     - name: Pull the latest Docker image
       docker_image:
         name: streamlit-devops-app:{{ image_tag }}
-        source: pull
+        source: local
 
     - name: Run the Docker container
       docker_container:
