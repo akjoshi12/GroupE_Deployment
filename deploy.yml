@@ -4,7 +4,7 @@
   tasks:
     - name: Stop existing container
       docker_container:
-        name: streamlit-app
+        name: streamlit-devops-app
         state: absent
 
     - name: Pull the latest Docker image
