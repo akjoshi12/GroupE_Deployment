@@ -1,10 +1,8 @@
 pipeline {
     agent any
-
     environment {
-        PATH = "/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin"  // Adjust this path based on where ansible is installed
+        PATH = "/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin"
     }
-
     stages {
         stage('Checkout') {
             steps {
@@ -18,7 +16,6 @@ pipeline {
                 ])
             }
         }
-
         stage('Build Docker Image') {
             steps {
                 script {
@@ -29,12 +26,11 @@ pipeline {
                 }
             }
         }
-
         stage('Deploy with Ansible') {
             steps {
                 script {
                     sh '''
-                        ansible-playbook deploy.yml -i hosts --private-key /path/to/correct/ssh/key -u azureuser -e "image_tag=${BUILD_ID}"
+                        ansible-playbook deploy.yml -i hosts -e "image_tag=${BUILD_ID}"
                     '''
                 }
             }
