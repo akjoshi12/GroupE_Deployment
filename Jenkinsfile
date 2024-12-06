@@ -20,6 +20,7 @@ pipeline {
             steps {
                 script {
                     sh '''
+                        export DOCKER_HOST="unix:///var/run/docker.sock"
                         IMAGE_TAG=${BUILD_ID}
                         /usr/local/bin/docker build -t streamlit-devops-app:$IMAGE_TAG .
                     '''
