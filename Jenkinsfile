@@ -4,7 +4,14 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/master']],
+                    userRemoteConfigs: [[
+                        url: 'https://github.com/akjoshi12/GroupE_Deployment',
+                        credentialsId: 'github-credentials'
+                    ]]
+                ])
             }
         }
 
